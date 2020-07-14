@@ -7,17 +7,17 @@ WORDS = []
 
 PHRASES = {
     "class %%%(%%%):":
-    "Make a class named %%% that is-a %%%.",
+     "Make a class named %%% that is-a %%%.",
     "class %%%(object):\n\tdef __init__(self,***)":
-    "class %%% has-a __init__ that takes self and *** params.",
+     "class %%% has-a __init__ that takes self and *** params.",
     "class %%%(object):\n\tdef ***(self, @@@)":
-    "class %%% has-a function *** that takes self and @@@ params.",
+     "class %%% has-a function *** that takes self and @@@ params.",
     "*** = %%%()":
-    "Set *** to an instance of class %%%.",
+     "Set *** to an instance of class %%%.",
     "***.***(@@@)":
-    "From *** get the *** function, call it with params self, @@@.",
+     "From *** get the *** function, call it with params self, @@@.",
     "***.*** = '***'":
-    "From *** get the *** attribute and set it to '***'."
+     "From *** get the *** attribute and set it to '***'."
 }
 
 # 他们想先练习短语吗?
@@ -61,17 +61,17 @@ def convert(snippet, phrase):
     for sentence in snippet, phrase:
         result = sentence[:]
 
-    # 替换类名
-    for word in class_names:
-        result = result.replace("%%%", word, 1)
+        # 替换类名
+        for word in class_names:
+            result = result.replace("%%%", word, 1)
 
-    # 替换其他名
-    for word in other_names:
-        result = result.replace("***", word, 1)
+        # 替换其他名
+        for word in other_names:
+            result = result.replace("***", word, 1)
 
-    # 替换参数列表
-    for word in param_names:
-        result = result.replace("@@@", word, 1)
+        # 替换参数列表
+        for word in param_names:
+            result = result.replace("@@@", word, 1)
 
         results.append(result)
 
@@ -91,9 +91,9 @@ try:
             if PHRASES_FIRST:
                 question,answer = answer, question
 
-                print(question)
+            print(question)
 
-                input('>')
-                print(f"ANSWER:{answer}\n\n")
+            input('>')
+            print(f"ANSWER:{answer}\n\n")
 except EOFError:
     print("\nBye")

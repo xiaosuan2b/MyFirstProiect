@@ -33,6 +33,7 @@ print(adding(233,1000,10000))
 print(pingjun(100,0))
 '''
 
+'''
 #对数升序或降序排列
 def uporder(*args):
     return sorted(args)
@@ -43,3 +44,17 @@ def downorder(*args):
 
 print(uporder(3,7,4,1))
 print(downorder(2,7,4,1))
+'''
+'''
+class xmath:
+    def adding(self,a,b):
+        return a+b
+    
+    def subtraction(self,a,b):
+        return a-b
+
+math = xmath()
+print(math.adding(1,1))
+print(math.subtraction(1,1))
+'''
+
